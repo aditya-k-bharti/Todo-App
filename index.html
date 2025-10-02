@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List -- LocalStorage</title>
+  <link rel="stylesheet" href="TodoList.css">
+</head>
+<body>
+
+  <div class="app" id="app">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <img src="./Todo.png" alt="" id="">
+        </div>
+        <div>
+          <h1>To-do List</h1>
+          <div class="muted">Fast. Pretty. Persistent(<span class="kbd">localStorage</span>)</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <input type="text" id="newTitle" placeholder="Add a task (press Enter)..." autocomplete="off"/>
+        <button id="addBtn" class="btn mobile-only">Add Task</button>
+        <input type="text" id="search" placeholder="Search todos..." autocomplete="off"/>
+        <div class="row" role="group" aria-label="Filters">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="active">Active</button>
+          <button class="chip" data-filter="completed">Completed</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <ul id="list"></ul>
+      <div id="empty" class="empty hide">No tasks yet. Add your first to-do</div>
+    </main>
+
+    <footer>
+      <div id="count">0 items</div>
+      <div class="row">
+        <button id="clearCompleted" class="btn secondary">Clear Completed</button>
+        <button id="export" class="btn">Export</button>
+        <button id="import" class="btn secondary">Import</button>
+        <button id="wipe" class="btn danger">Wipe All</button>
+      </div>
+    </footer>
+  </div>
+
+  <dialog id="editDialog">
+    <div class="dlg-body">
+      <div class="dlg-row">
+        <input type="text" id="editTitle" placeholder="Title"/>
+        <textarea id="editNotes" placeholder="Notes (optional)"></textarea>
+      </div>
+    </div>
+    <div class="dlg-actions">
+      <button id="editCancel" class="btn secondary">Cancel</button>
+      <button id="editSave" class="btn">Save</button>
+    </div>
+  </dialog>
+
+  <script src="TodoList.js"></script>
+</body>
+</html>
