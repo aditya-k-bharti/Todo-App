@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-Do List -- LocalStorage</title>
+  <title>Task Mate - Enhanced Todo List</title>
   <link rel="stylesheet" href="TodoList.css">
 </head>
 <body>
@@ -15,13 +15,21 @@
           <img src="./Todo.png" alt="" id="">
         </div>
         <div>
-          <h1>To-do List</h1>
-          <div class="muted">Fast. Pretty. Persistent(<span class="kbd">localStorage</span>)</div>
+          <h1>Task Mate</h1>
+          <div class="muted">Stay organized and get things done. <br>
+            Fast. Pretty. Persistent(<span class="kbd">localStorage</span>)
+          </div>
         </div>
       </div>
 
+      <div class="theme-toggle">
+        <button id="themeToggle" class="btn secondary" title="Toggle theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+
       <div class="controls">
-        <input type="text" id="newTitle" placeholder="Add a task (press Enter)..." autocomplete="off"/>
+        <input type="text" id="newTitle" placeholder="Write a task (press Enter/Button)..." autocomplete="off"/>
         <button id="addBtn" class="btn mobile-only">Add Task</button>
         <input type="text" id="search" placeholder="Search todos..." autocomplete="off"/>
         <div class="row" role="group" aria-label="Filters">
@@ -61,6 +69,8 @@
     </div>
   </dialog>
 
-  <script src="TodoList.js"></script>
+  <div id="toast-container" class="toast-container"></div>
+
+  <script type="module" src="TodoList.js"></script>
 </body>
 </html>
